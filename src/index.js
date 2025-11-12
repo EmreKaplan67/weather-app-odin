@@ -1,5 +1,4 @@
 import "./styles.css";
-import "./styles.css";
 import { getWeatherData } from "./api";
 import { renderWeather } from "./ui";
 

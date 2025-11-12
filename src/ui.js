@@ -38,6 +38,15 @@ function convertTemperature(temp, unit) {
   return temp;
 }
 
+// --- Wind Speed Conversion ---
+function convertWindSpeed(speedKmh, unit) {
+  if (unit === 'imperial') {
+    // Convert km/h to mph
+    return speedKmh * 0.621371;
+  }
+  return speedKmh;
+}
+
 // --- Main Display Rendering ---
 function renderMainDisplay(dayData, address, unit) {
   const iconClass = getWeatherIcon(dayData.icon);
@@ -54,6 +63,9 @@ function renderMainDisplay(dayData, address, unit) {
 
   const date = new Date(dayData.datetimeEpoch * 1000);
 
+  const windSpeed = convertWindSpeed(dayData.windspeed, unit).toFixed(1);
+  const windUnit = unit === 'metric' ? 'km/h' : 'mph';
+
   currentWeatherContainer.innerHTML = `
     <h2>${formatDisplayDate(date)}, in ${address}</h2>
     <div class="current-weather-details">
@@ -62,7 +74,7 @@ function renderMainDisplay(dayData, address, unit) {
         <p>Temperature: ${temp}</p>
         <p>Conditions: ${dayData.conditions}</p>
         <p>Humidity: ${dayData.humidity}%</p>
-        <p>Wind Speed: ${dayData.windspeed} km/h</p>
+        <p>Wind Speed: ${windSpeed} ${windUnit}</p>
       </div>
     </div>
   `;
