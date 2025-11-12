@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Odin Weather App</h1>
+      <form id="search-form">
+        <input type="text" id="search-input" placeholder="Location" autocomplete="off"/>
+        <button type="submit">Search</button>
+      </form>
+      <button id="unit-toggle">°C / °F</button>
+    </header>
+    <div id="output">
+      <div id="current-weather"></div>
+      <div id="forecast-grid"></div>
+    </div>
+  </body>
+</html>

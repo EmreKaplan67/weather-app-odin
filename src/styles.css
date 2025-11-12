@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background: linear-gradient(to top right, #e0f7fa, #b3e5fc);
+  min-height: 100vh;
+  padding: 2rem;
+  color: #333;
+  overflow-y: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0d47a1;
+}
+
+form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 250px;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #1976d2;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #1565c0;
+}
+
+#unit-toggle {
+  position: relative;
+  width: 70px; /* Increased width */
+  height: 34px; /* Increased height */
+  background-color: #1976d2; /* Blue for Celsius */
+  border-radius: 17px; /* Adjusted for new height */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: transparent; /* Hide the default button text */
+}
+
+#unit-toggle::before {
+  content: '°C';
+  position: absolute;
+  top: 4px; /* Adjusted position */
+  left: 4px; /* Adjusted position */
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1976d2;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+#unit-toggle.imperial-active {
+  background-color: #d32f2f; /* Red for Fahrenheit */
+}
+
+#unit-toggle.imperial-active::before {
+  content: '°F';
+  color: #d32f2f;
+  transform: translateX(36px); /* Adjusted for new width */
+}
+
+#output {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#current-weather {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#current-weather h2 {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  color: #1565c0;
+}
+
+#current-weather p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.current-weather-details {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.weather-icon {
+  font-size: 6rem;
+  color: #42a5f5; 
+}
+
+#forecast-grid h3 {
+  font-size: 1.5rem;
+  color: #1565c0;
+  margin-bottom: 1rem;
+}
+
+.grid-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #1976d2 #e0f7fa; /* For Firefox */
+}
+
+.grid-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.grid-container::-webkit-scrollbar-track {
+  background: #e0f7fa;
+  border-radius: 4px;
+}
+
+.grid-container::-webkit-scrollbar-thumb {
+  background-color: #1976d2;
+  border-radius: 4px;
+}
+
+.forecast-day {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex: 0 0 180px; /* Set a fixed width for horizontal scrolling */
+}
+
+.forecast-day:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.forecast-day p:first-child {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #0d47a1;
+}
+
+.forecast-icon {
+  font-size: 3rem;
+  margin: 1rem 0;
+  color: #42a5f5; 
+}
