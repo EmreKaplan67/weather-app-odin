@@ -32,12 +32,12 @@ To get a local copy up and running, follow these simple steps.
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/your_username/weather-app.git
+   git clone https://github.com/EmreKaplan67/weather-app-odin.git
    ```
 
 2. **Navigate to the project directory:**
    ```sh
-   cd weather-app
+   cd weather-app-odin
    ```
 
 3. **Install NPM packages:**
@@ -56,7 +56,7 @@ To get a local copy up and running, follow these simple steps.
    ```sh
    npm start
    ```
-   The application will open in your default browser at `http://localhost:8080`.
+   The application will open in your default browser at `http://localhost:3000`.
 
 6. **Build for production:**
    To create a production-ready build, run:
